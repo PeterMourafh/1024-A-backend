@@ -49,3 +49,39 @@ pessoa.nome = "Terezinho"
 const cloudVoadora = [1,2,3,4 ]
 const batataVoadora:undefined = undefined
 
+const func = (nome:string):void=>
+    console.log(`${nome}Lindo:3`)
+
+
+//Serviço de preguiçoso 
+
+func("Tere")
+
+
+
+function somaVetor(v:number[] = [1,2,3,4]){
+    return v
+}
+const valorInicial = 0;
+const inicial = somaVetor().reduce(
+    (acumulador, valorAtual) => acumulador + valorAtual ,valorInicial
+)
+console.log(inicial)
+
+//Faça uma função que receba um vetor e devolva a soma dos valores pares.
+//Faça uma função que receba dois vetores e retorne um novo vetor com todos os valores passados
+//Exemplo func merge ([123, [456]) retorna[1,2,3,4,5,6]
+
+function somaPar(v:number[]):number{
+    let soma = 0
+    for (let i = 0; i < v.length; i++) {
+       if(v[i]!2==0){
+        soma = soma + v[i]!
+       }
+        
+    }
+}
+console.log(`O valor da somapar é ${SomaPar([1,2,3])}`)
+
+
+/////////////
