@@ -1,0 +1,88 @@
+// import express from 'express'
+
+// const app = express();
+// app.use(express.json())
+
+// app.get("/", (req, res) => {
+//    res.send("Olá, Mundo!")
+// });
+
+// app.listen(8000, () => {
+//     console.log("Meu servidor está rodando na porta 8000");
+// });
+
+
+///////////////////////
+/*
+let numero:number = 10 
+let palavra:string = "Algum texto";
+let bol:boolean = true
+
+let x: number | string = 10
+x = "Guilherme"
+
+let vetor:number[] = [1,2,4,5]
+vetor[2] = 10
+vetor.push(6)
+console.log(vetor)
+//vetor = [5,6,7,8,9]
+
+
+//Vetor de string
+
+let vetorString:string[] = ["a","b","ab"]
+
+type Pessoa = {id?:number; nome:string; idade:number}
+
+const pessoa:Pessoa={
+    id:1,
+    nome:"Guilherme",
+    idade:18,
+}
+const pessoa2:Pessoa={
+    id:1,
+    nome:"Guilherme",
+    idade:18,
+}
+pessoa.nome = "Terezinho"
+
+const cloudVoadora = [1,2,3,4 ]
+const batataVoadora:undefined = undefined
+
+const func = (nome:string):void=>
+    console.log(`${nome}Lindo:3`)
+
+
+//Serviço de preguiçoso 
+
+func("Tere")
+
+
+
+function somaVetor(v:number[] = [1,2,3,4]){
+    return v
+}
+const valorInicial = 0;
+const inicial = somaVetor().reduce(
+    (acumulador, valorAtual) => acumulador + valorAtual ,valorInicial
+)
+console.log(inicial)
+
+//Faça uma função que receba um vetor e devolva a soma dos valores pares.
+//Faça uma função que receba dois vetores e retorne um novo vetor com todos os valores passados
+//Exemplo func merge ([123, [456]) retorna[1,2,3,4,5,6]
+
+function somaPar(v:number[]):number{
+    let soma = 0
+    for (let i = 0; i < v.length; i++) {
+       if(v[i]!%2==0){
+        soma = soma + v[i]!
+       }
+        
+    }
+    return soma
+}
+console.log(`O valor da somapar é ${somaPar([1,2,3])}`)
+
+
+*/
