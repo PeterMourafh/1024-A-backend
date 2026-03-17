@@ -1,29 +1,24 @@
-//conteúdo de hoje => Promisses
+// Get the client
+import mysql from 'mysql2/promise';
 
+// Create the connection to database
+const connection = await mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'luademel',
+});
 
-// Assincrona?
-async function minhaPromessa():Promise<string>{
-    const prom:Promise<string> = new Promise((resolve, reject)=>{
-        setTimeout(()=>reject("Tere"),5000)
-    })
-    return prom
+// Using placeholders
+try {
+  const queryPrepare = await connection.prepare(
+    'SELECT * FROM `pessoa`'
+  );
+  const results = await queryPrepare.execute([])
+
+  console.log(results);
+} catch (err) {
+  console.log(err);
 }
 
-minhaPromessa().then((valor)=>console.log(valor)).catch((erro)=>console.log(erro))
-console.log("Executei esse codigo")
-
-try{
-    const resultado = await minhaPromessa()
-    console.log(resultado)
-}
-catch(erro){
-    console.log(erro)
-}
-
-
-//Crie uma função que tenha 50% de chance de retornar tere após 5 segundos ou a função devolve o valor null function devolveTere()
-
-
-
-
-
+// Close the connection
+await connection.end();

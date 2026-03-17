@@ -86,3 +86,52 @@ console.log(`O valor da somapar é ${somaPar([1,2,3])}`)
 
 
 */
+
+//////
+//17.03
+//conteúdo de hoje => Promisses
+
+
+// Assincrona?
+// async function minhaPromessa():Promise<string>{
+//     const prom:Promise<string> = new Promise((resolve, reject)=>{
+//         setTimeout(()=>reject("Tere"),5000)
+//     })
+//     return prom
+// }
+
+// minhaPromessa().then((valor)=>console.log(valor)).catch((erro)=>console.log(erro))
+// console.log("Executei esse codigo")
+
+// try{
+//     const resultado = await minhaPromessa()
+//     console.log(resultado)
+// }
+// catch(erro){
+//     console.log(erro)
+// }
+
+
+//Crie uma função que tenha 50% de chance de retornar tere após 5 segundos ou a função devolve o valor null function devolveTere()
+
+
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5, 6];
+
+// // Criando uma cópia do array1 e adicionando o elemento 4 no final
+// const array3 = [...array1, 4];
+// console.log(array3); // Output: [1, 2, 3, 4]
+
+// // Concatenando os arrays array1 e array2 em um novo array
+// const array4 = [...array1, ...array2];
+// console.log(array4); // Output: [1, 2, 3, 4, 5, 6]
+
+// // Passando elementos do array1 como argumentos para a função Math.max()
+// const max = Math.max(...array1);
+// console.log(max); // Output: 3
+
+
+
+
+
+
