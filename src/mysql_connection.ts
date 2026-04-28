@@ -2,6 +2,6 @@ import mysql, { type RowDataPacket, type Connection, type ResultSetHeader } from
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    database: 'luademel',
+    database: 'dbteremercado',
 });
 export default connection

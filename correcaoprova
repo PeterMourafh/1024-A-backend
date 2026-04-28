@@ -1,0 +1,13 @@
+/*
+const dadosTransformados  = dados.map(dado=>{
+    const dadosTransformado:IPizza2 = {
+        id_pizza:dado.id,
+        nome_pizza:dado.nome,
+        tamanho_pizza:dado.tamanho,
+        preco_pizza:dado.preco,
+        data_criacao_pizza:dado.data_criacao,
+    }
+    return dadosTransformado
+})
+    res.status(200).json(dadosTransformados)    
+*/
