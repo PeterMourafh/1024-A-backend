@@ -21,48 +21,53 @@ interface IProduto extends RowDataPacket {
     data_modificacao: Date,
 }
 
-app.get("/pessoas", async (req, res) => {
-    try {
-        const [dados] =
-            await connection.execute<IPessoa[]>('SELECT * FROM pessoa')
-        res.status(200).json(dados)
-    } catch (err) {
-        new MysqlErrorHandler(err, res).validar()
-    }
-})
-
 app.post("/pessoas", async (req, res) => {
-    const { id, nome } = req.body
+    const { id, nome, cidade, idade } = req.body
+
+    if (id == '' || id == null || nome == null || nome == '') {
+        return res.status(400).json({
+            mensagem: "Dados enviados no formato errado. Confira o JSON!"
+        })
+    }
+
     try {
         const [result] =
             await connection.execute<ResultSetHeader>(
-                'INSERT INTO pessoa VALUES (?,?)',
-                [id, nome]
+                'INSERT INTO clientes VALUES (?,?,?,?)',
+                [id, nome, cidade, idade ]
             )
 
         if (result.affectedRows === 0)
-            return res.status(500).json({ mensagem: "Erro ao inserir!" })
+            return res.status(500).json({
+                mensagem: "Erro ao inserir!"
+            })
 
-        return res.status(201).json({ mensagem: "Sucesso ao inserir!" })
+        return res.status(201).json({
+            mensagem: "Sucesso ao inserir!"
+        })
 
     } catch (err) {
         new MysqlErrorHandler(err, res).validar()
     }
 })
 
-app.post("/cadastro_produto", async (req, res) => {
-    const { id, nome, categoria, preco, data_criacao, data_modificacao } = req.body
+app.post("/cadastro_produto_v2", async (req, res) => {
+    const { id, nome, categoria, preco} = req.body
 
-    if (!id || !nome || !categoria || !preco || !data_criacao || !data_modificacao) {
+    if (!id || !nome || !categoria || !preco) {
         return res.status(400).json({ mensagem: "JSON inválido!" })
     }
 
     try {
+        const data_criacao = new Date()
+        const data_modificacao = null
         const [result] =
             await connection.execute<ResultSetHeader>(
-                'INSERT INTO produto VALUES (?,?,?,?,?,?)',
-                [id, nome, categoria, preco, data_criacao, data_modificacao]
+                'INSERT INTO produtos VALUES (?,?,?,?)',
+                [id, nome, categoria, preco]
             )
+            
+
 
         if (result.affectedRows === 0)
             return res.status(500).json({ mensagem: "Erro ao inserir!" })
